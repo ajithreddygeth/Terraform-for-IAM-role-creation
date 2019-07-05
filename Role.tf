@@ -41,20 +41,20 @@ EOF
 
 resource "aws_iam_role_policy_attachment" "role-policy-attachment" {
   
-  role       = "okta_dev" 
+  role       = "okta_devops_dev" 
   count      = "${length(var.iam_policy_arn)}"
   policy_arn = "${var.iam_policy_arn[count.index]}"
   
 }
 resource "aws_iam_role_policy_attachment" "role-policy-attachment1" {
 
-  role       = "okta_qa"
+  role       = "okta_devops_qa"
   count      = "${length(var.iam_policy_arn1)}"
   policy_arn = "${var.iam_policy_arn1[count.index]}"
 }
 resource "aws_iam_role_policy_attachment" "role-policy-attachment2" {
   
-  role       = "okta_power_user" 
+  role       = "okta_devops_power_user" 
   
   count      = "${length(var.iam_policy_arn2)}"
   policy_arn = "${var.iam_policy_arn2[count.index]}"
